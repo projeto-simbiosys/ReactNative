@@ -1,0 +1,26 @@
+export const regions = [
+  {
+    id: "1",
+    name: "Sé",
+    latitude: -23.5505,
+    longitude: -46.6333,
+    population: 850,
+    malePercentage: 72,
+    femalePercentage: 28,
+    avgAge: 37,
+    unemploymentRate: 64,
+    timeOnStreetAvg: 3.4,
+  },
+  {
+    id: "2",
+    name: "Mooca",
+    latitude: -23.5562,
+    longitude: -46.6031,
+    population: 320,
+    malePercentage: 65,
+    femalePercentage: 35,
+    avgAge: 41,
+    unemploymentRate: 58,
+    timeOnStreetAvg: 2.1,
+  },
+];
