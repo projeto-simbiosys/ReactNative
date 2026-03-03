@@ -2,7 +2,14 @@ import { Stack } from "expo-router";
 
 export default function Layout() {
   return (
-    <Stack>
+    <Stack
+      screenOptions={{
+        headerTintColor: "#04047D",
+        headerTitleStyle: {
+          fontWeight: "bold",
+        },
+      }}
+    >
       <Stack.Screen
         name="index"
         options={{ title: "Mapa Inteligente" }}
