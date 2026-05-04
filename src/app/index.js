@@ -395,10 +395,6 @@ export default function MapScreen() {
               <Text style={styles.infoValue}>{totalPopulation}</Text>
             </View>
             <View style={styles.infoItem}>
-              <Text style={styles.infoLabel}>Desemprego Médio</Text>
-              <Text style={styles.infoValue}>{avgUnemployment}%</Text>
-            </View>
-            <View style={styles.infoItem}>
               <Text style={styles.infoLabel}>Tempo Médio Rua</Text>
               <Text style={styles.infoValue}>{avgTimeOnStreet} anos</Text>
             </View>

@@ -63,7 +63,7 @@ export default function RegionDetail() {
 
       try {
         const response = await api.post(
-          `/api/v1/predictions/${regionId}/generate`,
+          `/api/v1/regions/${regionId}/ai-report`,
         );
         const data = response?.data || null;
 
@@ -185,8 +185,8 @@ export default function RegionDetail() {
           </View>
 
           <View style={styles.card}>
-            <Text style={styles.label}>Taxa de desemprego</Text>
-            <Text style={styles.value}>{unemploymentRate}</Text>
+            <Text style={styles.label}>Tempo médio em situação de rua</Text>
+            <Text style={styles.value}>{averageTimeOnStreet}</Text>
           </View>
         </View>
 
@@ -194,11 +194,6 @@ export default function RegionDetail() {
           <View style={styles.card}>
             <Text style={styles.label}>População total</Text>
             <Text style={styles.value}>{totalPopulation}</Text>
-          </View>
-
-          <View style={styles.card}>
-            <Text style={styles.label}>Tempo médio em situação de rua</Text>
-            <Text style={styles.value}>{averageTimeOnStreet}</Text>
           </View>
         </View>
       </View>
@@ -213,29 +208,20 @@ export default function RegionDetail() {
         {loadingPrediction && (
           <Text style={styles.infoText}>Gerando previsão da IA...</Text>
         )}
+
         {!loadingPrediction && predictionError && (
           <Text style={styles.infoText}>
             Não foi possível gerar a previsão: {predictionError}
           </Text>
         )}
-        {!loadingPrediction && !predictionError && prediction?.growthTrend && (
-          <Text style={styles.infoText}>
-            Tendência de crescimento: {growthTrendLabel}
-          </Text>
-        )}
+
         {!loadingPrediction &&
           !predictionError &&
-          prediction?.projectedPopulation6Months !== undefined && (
+          prediction?.predictionJustification && (
             <Text style={styles.infoText}>
-              População projetada em 6 meses:{" "}
-              {prediction.projectedPopulation6Months}
+              {prediction.predictionJustification}
             </Text>
           )}
-        <Text style={styles.infoText}>
-          {!loadingPrediction && !predictionError && prediction?.aiJustification
-            ? prediction.aiJustification
-            : "Sem previsão disponível para esta região no momento."}
-        </Text>
       </View>
     </ScrollView>
   );
