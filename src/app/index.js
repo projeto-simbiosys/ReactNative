@@ -227,6 +227,12 @@ export default function MapScreen() {
           ))}
         </ScrollView>
         <TouchableOpacity
+          style={styles.dashboardButton}
+          onPress={() => router.push("/dashboard")}
+        >
+          <Text style={styles.dashboardButtonText}>📊 IA</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
           style={styles.filterMenuButton}
           onPress={toggleSidebar}
         >
@@ -424,6 +430,18 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     marginLeft: 8,
     position: "relative",
+  },
+  dashboardButton: {
+    backgroundColor: "#04047D",
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 6,
+    marginLeft: 4,
+  },
+  dashboardButtonText: {
+    fontSize: 12,
+    fontWeight: "600",
+    color: "#fff",
   },
   filterMenuButtonText: {
     fontSize: 12,

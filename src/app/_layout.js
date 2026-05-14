@@ -19,6 +19,11 @@ export default function Layout() {
         name="region/[id]"
         options={{ title: "Detalhes da Região" }}
       />
+
+      <Stack.Screen
+        name="dashboard"
+        options={{ title: "Dashboard c/ IA" }}
+      />
     </Stack>
   );
 }
